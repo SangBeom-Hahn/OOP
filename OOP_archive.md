@@ -167,6 +167,11 @@ public class VIPCustomer extends Customer{
         bonusRatio = 0.05;
         saleRatio = 0.1;
     }
+    
+    int calcPrice(int price){
+        bonusPoint += price * (bonusRatio + 1);
+        return 0;
+    }    
 }
 ```
 
