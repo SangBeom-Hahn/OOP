@@ -206,3 +206,117 @@ public class Test {
     }
 }
 ```
+
+
+<ul>
+  <li><h3>클래스 분리하고 분리한 객체를 많이 생성하면 ArrayList</h3></li>
+</ul>
+
+```java
+import java.util.ArrayList;
+
+public class Student {
+    int studentId;
+    String studentName;
+    ArrayList arrayList;
+    public Student(){
+        arrayList = new ArrayList<Subject>();
+    }
+
+    //메서드
+    void addSubject(String subjectName, int score){
+        Subject subject = new Subject(subjectName);
+        subject.setScore(score);
+
+        arrayList.add(subject);
+    }
+}
+
+```
+
+<ul>
+  <li><h3>객체의 협력</h3></li>
+</ul>
+
+```java
+// 학생 클래스
+package take_a_bus;
+
+public class Student {
+    //필르
+    String name;
+    int money;
+
+    //생성자
+    public Student(String name, int money){
+        this.name = name;
+        this.money = money;
+    }
+
+    //메서드
+    void takeBus(Bus bus){
+        bus.take(1000);
+        money -= 1000;
+    }
+
+    void showInfo(){
+        System.out.println(money);
+    }
+}
+
+
+// 
+public class Bus {
+    //필드
+    int passengerCount;
+    int money;
+    int su;
+
+    //생성자
+    public Bus(int su){
+        this.su = su;
+        money = 0;
+        passengerCount = 0;
+    }
+
+    //메서드
+    public void take(int money){
+        passengerCount++;
+        this.money += money;
+    }
+
+    void showInfo(){
+        System.out.println(money+su+passengerCount);
+    }
+}
+
+//main 함수
+public class TestBus {
+    public static void main(String[] args) {
+        Student student = new Student("james", 5000);
+        Bus bus = new Bus(100);
+
+        student.takeBus(bus);
+        student.showInfo();
+        bus.showInfo();
+    }
+}
+```
+
+<ul>
+  <li><h3>static으로 기준 잡기</h3></li>
+</ul>
+
+```java
+package statictest;
+
+public class Student {
+    private static int studentId = 10000;
+    int studentNum;
+
+    public Student(){
+        studentNum = studentId++;
+    }
+}
+
+```
