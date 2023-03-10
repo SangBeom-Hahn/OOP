@@ -398,3 +398,50 @@ public class SuperPlayer extends PlayerLevel {
 }
 
 ```
+
+<ul>
+  <li><h3>클래스 상속과 인터페이스 구현 동시에</h3></li>
+</ul>
+
+```
+// Shelf 클래스
+public class Shelf {
+    //필드
+    protected ArrayList shelf;
+
+    //생성자
+    public Shelf(){
+        shelf = new ArrayList<String>();
+    }
+
+    //메서드
+    int getCount(){
+        return shelf.size();
+    }
+}
+
+// 큐 인터페이스
+public interface Queue {
+    void enQueue(String title);
+    String deQueue();
+    int getSize();
+}
+
+// 상속받고 구현하는 클래스
+public class BookShelf extends Shelf implements Queue{
+    @Override
+    public void enQueue(String title) {
+        shelf.add(title);
+    }
+
+    @Override
+    public String deQueue() {
+        return (String) shelf.remove(0);
+    }
+
+    @Override
+    public int getSize() {
+        return getCount();
+    }
+}
+```
