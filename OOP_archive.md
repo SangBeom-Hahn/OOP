@@ -320,3 +320,81 @@ public class Student {
 }
 
 ```
+
+
+<ul>
+  <li><h3>템플릿 메서드 활용</h3></li>
+</ul>
+
+```java
+// player 일반 클래스
+
+package gamelevel;
+
+public class Player {
+    private PlayerLevel level;
+
+    public Player(){
+        level = new BeginnerPlayer();
+        level.showLevelMessage();
+    }
+
+    //메서드
+    public void upgradeLevel(PlayerLevel level){
+        this.level = level;
+        this.level.showLevelMessage();
+    }
+
+    public void play(int count){
+        level.go(count);
+    }
+
+    public static void main(String[] args) {
+        Player player = new Player();
+        player.play(5);
+        player.upgradeLevel(new SuperPlayer());
+        player.play(2);
+    }
+}
+
+// PlayerLevel에 따른 추상 클래스
+public abstract class PlayerLevel {
+    public abstract void run();
+    public abstract void jump();
+    public abstract void turn();
+    public abstract void showLevelMessage();
+
+    public final void go(int count){
+        run();
+        for(int i = 0; i < count; i++){
+            jump();
+        }
+        turn();
+    }
+}
+
+
+// PlayerLevel에 따른 추상 클래스 하위 구현 클래스
+public class SuperPlayer extends PlayerLevel {
+    @Override
+    public void run() {
+        System.out.println("매우 빽세게 뜁니다.");
+    }
+
+    @Override
+    public void jump() {
+        System.out.println("매우 빽세게 점프합니다.");
+    }
+
+    @Override
+    public void turn() {
+        System.out.println("매우 빽세게 돕니다.");
+    }
+
+    @Override
+    public void showLevelMessage() {
+        System.out.println("슈퍼레벨입니다.");
+    }
+}
+
+```
