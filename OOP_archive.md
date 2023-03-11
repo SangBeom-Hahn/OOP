@@ -445,3 +445,43 @@ public class BookShelf extends Shelf implements Queue{
     }
 }
 ```
+
+
+<ul>
+  <li><h3>컬렉션 프레임워크 제네릭 활용</h3></li>
+</ul>
+
+```java
+package Doit;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class MemberArray {
+    //필드
+    private ArrayList<Member> arrayList;
+
+    //생성자
+    public MemberArray(){
+        arrayList = new ArrayList<>();
+    }
+
+    //메서드
+    public void addMember(Member member){ // 특징1 : 컬렉션을 사용하는 메서드의 매개변수는 그 컬렉션의 제네릭을 받는다.
+        arrayList.add(member);
+    }
+
+    // id를 받아서 동일한 id의 요소를 제거
+    public boolean removeMember(int memberId){
+        for(int i=0; i<arrayList.size(); i++){
+            Member member = arrayList.get(i); // 특징2 : 받으면 제네릭 타입의 레퍼런스로 받아야겠네
+            if(member.getMemberId() == memberId){
+                arrayList.remove(i);
+                return true;
+            }
+        }
+        System.out.println("없습니다.");
+        return false;
+    }
+}
+```
