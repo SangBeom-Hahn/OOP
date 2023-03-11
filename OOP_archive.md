@@ -483,5 +483,18 @@ public class MemberArray {
         System.out.println("없습니다.");
         return false;
     }
+    
+    // iterator로 순회
+    public boolean removeMember2(int memberId){
+        Iterator<Member> iterator = arrayList.iterator();
+        while(iterator.hasNext()){
+            Member member = iterator.next(); 특징3 : iterator는 순회할 요소를 제네릭으로 받습니다.
+            if(member.getMemberId() == memberId){
+                arrayList.remove(member);
+                return true;
+            }
+        }
+        return false;
+    }
 }
 ```
