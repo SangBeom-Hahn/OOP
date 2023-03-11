@@ -498,3 +498,26 @@ public class MemberArray {
     }
 }
 ```
+
+<ul>
+  <li><h3>컬렉션 프레임워크 제네릭 활용</h3></li>
+</ul>
+
+```java
+package Except;
+public class Exception {
+    public Class loadClass(String className) throws ClassNotFoundException {
+        Class c = Class.forName(className);
+        return c;
+    }
+    public static void main(String[] args) {
+        Exception exception = new Exception();
+        try{
+            exception.loadClass("java.lang.string");
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+}
+
+```
