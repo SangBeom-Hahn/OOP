@@ -403,7 +403,7 @@ public class SuperPlayer extends PlayerLevel {
   <li><h3>클래스 상속과 인터페이스 구현 동시에</h3></li>
 </ul>
 
-```
+```java
 // Shelf 클래스
 public class Shelf {
     //필드
