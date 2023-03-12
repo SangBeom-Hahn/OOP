@@ -500,7 +500,7 @@ public class MemberArray {
 ```
 
 <ul>
-  <li><h3>컬렉션 프레임워크 제네릭 활용</h3></li>
+  <li><h3>throws 예외처리</h3></li>
 </ul>
 
 ```java
