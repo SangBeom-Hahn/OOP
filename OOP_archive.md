@@ -44,7 +44,7 @@ public class Circle {
 ```
 
 <ul>
-  <li><h3>정보 은닉</h3></li>
+  <li><h3>정보 은닉</h3></li>   
 </ul>
 
 ```java
