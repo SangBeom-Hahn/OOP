@@ -502,3 +502,21 @@ public class MemberArray {
 <ul>
   <li><h3>throws 예외처리</h3></li>
 </ul>
+
+```java
+package Except;
+public class Exception {
+    public Class loadClass(String className) throws ClassNotFoundException {
+        Class c = Class.forName(className);
+        return c;
+    }
+    public static void main(String[] args) {
+        Exception exception = new Exception();
+        try{
+            exception.loadClass("java.lang.string");
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+}
+```
