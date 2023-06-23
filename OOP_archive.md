@@ -24,6 +24,23 @@ class Point {
     }
 }
 
+public class Circle {
+    //필드
+    private int radius;
+    Point point;
+
+    //생성자
+    public Circle(int radius){
+        this.radius = radius;
+        point = new Point(5, 7);
+    }
+
+    //메서드
+    public void showPoint(){
+        System.out.println(point.getX()+point.getY());
+    }
+}
+
 ```
 
 <ul>
