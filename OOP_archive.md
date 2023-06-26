@@ -213,7 +213,24 @@ public class Test {
 </ul>
 
 ```java
+import java.util.ArrayList;
 
+public class Student {
+    int studentId;
+    String studentName;
+    ArrayList arrayList;
+    public Student(){
+        arrayList = new ArrayList<Subject>();
+    }
+
+    //메서드
+    void addSubject(String subjectName, int score){
+        Subject subject = new Subject(subjectName);
+        subject.setScore(score);
+
+        arrayList.add(subject);
+    }
+}
 
 ```
 
