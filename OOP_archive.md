@@ -520,3 +520,28 @@ public class Exception {
     }
 }
 ```
+
+<ul>
+  <li><h3>싱글톤 패턴</h3></li>
+</ul>
+
+```java
+public class Settings {
+    private Settings() {
+    }
+    
+    private static class SettingsHolder {
+        private final static Settings INSTANCE = new Settings();
+    }
+    
+    public static Settings getInstance() {
+        return SettingsHolder.INSTANCE;
+    }
+}
+```
+
+```java
+public enum Settings {
+    INSTANCE;
+}
+```
