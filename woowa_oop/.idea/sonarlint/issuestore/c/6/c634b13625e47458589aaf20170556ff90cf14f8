@@ -1,0 +1,15 @@
+
+—
+java:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ðÑ·é
+A
+java:S1068"&Remove this unused "id" private field.(þÓî«þÿÿÿÿ
+E
+java:S1068"*Remove this unused "userId" private field.(Â—‹¼úÿÿÿÿ
+E
+java:S1068"/Remove this unused "orderedTime" private field.(ƒÓÙ¢
+E
+java:S1068"/Remove this unused "orderStatus" private field.(ÏÁ¬â
+E
+java:S11440"*Remove this unused private "payed" method.(“¯½‹ûÿÿÿÿ
+D
+java:S11444".Remove this unused private "delivered" method.(Å‹Êƒ
