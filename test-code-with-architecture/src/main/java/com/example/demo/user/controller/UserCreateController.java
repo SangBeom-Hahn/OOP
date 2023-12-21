@@ -25,10 +25,10 @@ public class UserCreateController {
 
     @PostMapping
     public ResponseEntity<UserResponse> createUser(@RequestBody UserCreate userCreateDto) {
-        UserEntity userEntity = userService.create(userCreateDto);
+        UserEntity user = userService.create(userCreateDto);
         return ResponseEntity
             .status(HttpStatus.CREATED)
-            .body(userController.toResponse(userEntity));
+            .body(userController.toResponse(user));
     }
 
 }

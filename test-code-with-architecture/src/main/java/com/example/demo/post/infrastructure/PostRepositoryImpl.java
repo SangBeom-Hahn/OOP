@@ -12,12 +12,12 @@ public class PostRepositoryImpl implements PostRepository {
     private final PostJpaRepository postJpaRepository;
 
     @Override
-    public Optional<PostEntity> findById(long id) {
-        return postJpaRepository.findById(id);
+    public Optional<com.example.demo.post.domain.Post> findById(long id) {
+        return postJpaRepository.findById(id).map(Post::toModel);
     }
 
     @Override
-    public PostEntity save(PostEntity postEntity) {
-        return postJpaRepository.save(postEntity);
+    public com.example.demo.post.domain.Post save(com.example.demo.post.domain.Post post) {
+        return postJpaRepository.save(Post.from(post)).toModel();
     }
 }

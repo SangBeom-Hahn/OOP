@@ -40,4 +40,28 @@ public class UserEntity {
 
     @Column(name = "last_login_at")
     private Long lastLoginAt;
+
+    public com.example.demo.user.domain.User toModel() {
+        return com.example.demo.user.domain.User.builder()
+                .id(id)
+                .email(email)
+                .nickname(nickname)
+                .address(address)
+                .certificationCode(certificationCode)
+                .status(status)
+                .lastLoginAt(lastLoginAt)
+                .build();
+    }
+
+    public static UserEntity from(com.example.demo.user.domain.User user) {
+        UserEntity userEntity = new UserEntity();
+        userEntity.id = user.getId();
+        userEntity.email = user.getEmail();
+        userEntity.address = user.getAddress();
+        userEntity.nickname = user.getNickname();
+        userEntity.status = user.getStatus();
+        userEntity.certificationCode = user.getCertificationCode();
+        userEntity.lastLoginAt = user.getLastLoginAt();
+        return userEntity;
+    }
 }
