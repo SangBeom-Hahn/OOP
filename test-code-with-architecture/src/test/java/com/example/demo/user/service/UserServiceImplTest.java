@@ -5,20 +5,20 @@ import com.example.demo.mock.FakeMailSender;
 import com.example.demo.mock.FakeUserRepository;
 import com.example.demo.mock.TestClockHolder;
 import com.example.demo.mock.TestUuidHolder;
-import com.example.demo.service.UserService;
+import com.example.demo.service.UserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 
-public class UserServiceTest {
-    private UserService userService;
+public class UserServiceImplTest {
+    private UserServiceImpl userServiceImpl;
 
     @BeforeEach
     void init() {
         FakeMailSender fakeMailSender = new FakeMailSender();
-        this.userService = UserService.builder()
+        this.userServiceImpl = UserServiceImpl.builder()
                 .clockHolder(new TestClockHolder(1))
                 .userRepository(new FakeUserRepository())
                 .uuidHolder(new TestUuidHolder("aaaa"))
-                .certificationService(new CertificationService(fakeMailSender))
+                .certificationServiceImpl(new CertificationServiceImpl(fakeMailSender))
                 .build();
     }
 }

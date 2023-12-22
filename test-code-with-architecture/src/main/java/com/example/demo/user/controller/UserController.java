@@ -1,6 +1,6 @@
 package com.example.demo.user.controller;
 
-import com.example.demo.service.UserService;
+import com.example.demo.service.UserServiceImpl;
 import com.example.demo.user.domain.MyProfileResponse;
 import com.example.demo.user.controller.response.UserResponse;
 import com.example.demo.user.domain.User;
@@ -30,21 +30,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserService userService;
+    private final UserService userServiceImpl;
 
     @ResponseStatus
     @GetMapping("/{id}")
     public ResponseEntity<UserResponse> getUserById(@PathVariable long id) {
         return ResponseEntity
             .ok()
-            .body(toResponse(userService.getById(id)));
+            .body(toResponse(userServiceImpl.getById(id)));
     }
 
     @GetMapping("/{id}/verify")
     public ResponseEntity<Void> verifyEmail(
         @PathVariable long id,
         @RequestParam String certificationCode) {
-        userService.verifyEmail(id, certificationCode);
+        userServiceImpl.verifyEmail(id, certificationCode);
         return ResponseEntity.status(HttpStatus.FOUND)
             .location(URI.create("http://localhost:3000"))
             .build();
@@ -55,8 +55,8 @@ public class UserController {
         @Parameter(name = "EMAIL", in = ParameterIn.HEADER)
         @RequestHeader("EMAIL") String email // 일반적으로 스프링 시큐리티를 사용한다면 UserPrincipal 에서 가져옵니다.
     ) {
-        User user = userService.getByEmail(email);
-        userService.login(user.getId());
+        User user = userServiceImpl.getByEmail(email);
+        userServiceImpl.login(user.getId());
         return ResponseEntity
             .ok()
             .body(toMyProfileResponse(user));
@@ -69,8 +69,8 @@ public class UserController {
         @RequestHeader("EMAIL") String email, // 일반적으로 스프링 시큐리티를 사용한다면 UserPrincipal 에서 가져옵니다.
         @RequestBody UserUpdate userUpdateDto
     ) {
-        User user = userService.getByEmail(email);
-        user = userService.update(user.getId(), userUpdateDto);
+        User user = userServiceImpl.getByEmail(email);
+        user = userServiceImpl.update(user.getId(), userUpdateDto);
         return ResponseEntity
             .ok()
             .body(toMyProfileResponse(user));

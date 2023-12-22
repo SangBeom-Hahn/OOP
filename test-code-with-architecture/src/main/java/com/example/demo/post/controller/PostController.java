@@ -1,7 +1,7 @@
 package com.example.demo.post.controller;
 
+import com.example.demo.post.controller.port.PostService;
 import com.example.demo.post.infrastructure.PostEntity;
-import com.example.demo.service.PostService;
 import com.example.demo.user.controller.UserController;
 import com.example.demo.post.controller.response.PostResponse;
 import com.example.demo.post.domain.PostUpdate;

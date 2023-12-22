@@ -1,9 +1,8 @@
 package com.example.demo.service;
 
 
-import java.time.Clock;
-
 import com.example.demo.common.domain.exception.ResourceNotFoundException;
+import com.example.demo.post.controller.port.PostService;
 import com.example.demo.post.domain.Post;
 import com.example.demo.post.domain.PostCreate;
 import com.example.demo.post.domain.PostUpdate;
@@ -16,17 +15,17 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class PostService {
+public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
-    private final com.example.demo.service.UserService userService;
+    private final com.example.demo.service.UserServiceImpl userServiceImpl;
 
-    public com.example.demo.post.domain.Post getById(long id) {
+    public Post getById(long id) {
         return postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Posts", id));
     }
 
     public Post create(PostCreate postCreate) {
-        User writer = userService.getById(postCreate.getWriterId());
+        User writer = userServiceImpl.getById(postCreate.getWriterId());
         Post post = Post.from(writer, postCreate);
         return postRepository.save(post);
     }

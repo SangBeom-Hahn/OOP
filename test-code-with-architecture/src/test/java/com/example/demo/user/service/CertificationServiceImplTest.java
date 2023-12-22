@@ -1,24 +1,22 @@
 package com.example.demo.user.service;
 
 import com.example.demo.mock.FakeMailSender;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
-class CertificationServiceTest {
+class CertificationServiceImplTest {
     @Test
     @DisplayName("")
     void CertificationServiceTest() {
         // given
         FakeMailSender fakeMailSender = new FakeMailSender();
-        CertificationService certificationService =
-                new CertificationService(fakeMailSender);
+        CertificationServiceImpl certificationServiceImpl =
+                new CertificationServiceImpl(fakeMailSender);
 
         // when
-        certificationService.send("a@naver.com", 1, "aaaa");
+        certificationServiceImpl.send("a@naver.com", 1, "aaaa");
       
         // then
         assertThat(fakeMailSender.email)
