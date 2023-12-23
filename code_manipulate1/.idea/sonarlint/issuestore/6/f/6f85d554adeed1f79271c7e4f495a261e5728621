@@ -1,3 +1,15 @@
 
-_
-java:S2094"BRemove this empty class, write its code or make it an "interface".(’òîí8ú«ÌÕ­1
+j
+java:S1104"MMake A a static final constant or non-public and provide accessors if needed.(İ˜§ñ8âŞ²É1
+n
+java:S1104"QMake title a static final constant or non-public and provide accessors if needed.(Å¬õ8âŞ²É1
+D
+java:S1444"'Make this "public static A" field final(İ˜§ñ8ãŞ²É1
+h	java:S116"LRename this field "B" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎğäË8èŞ²É1
+i
+java:S3008"LRename this field "A" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ˜§ñ8èŞ²É1
+G	java:S106"+Replace this use of System.out by a logger.(Ô·ê8ñŞ²É1
+B
+java:S1068"%Remove this unused "B" private field.(ÎğäË8óŞ²É1
+H
+java:S1144"&Remove this unused private "c" method.(Ùù±˜ıÿÿÿÿ8óŞ²É1
