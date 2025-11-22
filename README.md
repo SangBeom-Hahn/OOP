@@ -28,3 +28,4 @@
     - [오류를 핸들링하는 방법](https://hsb422.tistory.com/entry/%EB%AC%B8%EB%B2%95-%EC%98%88%EC%99%B8)
     - [해시를 사용한 데이터 형식(HashMap, HashSet)](https://hsb422.tistory.com/entry/%EB%AC%B8%EB%B2%95-%EC%BB%AC%EB%9E%99%EC%85%98-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-%EC%B4%9D-%EC%A0%95%EB%A6%AC)
     - [JVM의 역할과 동작 원리](https://hsb422.tistory.com/entry/%EC%BD%94%EB%93%9C-%EC%A1%B0%EC%9E%91-PARTJVM-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0)
+    - [자바는 Call By Reference를 지원하니 않는다.](https://hsb422.tistory.com/entry/222)
